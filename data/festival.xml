@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<festival id="FEST-001" version="1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="festival.xsd">
+  <identity>
+    <name>Mini festival</name>
+    <edition>1</edition>
+    <location>Údolní areál u řeky (fiktivní)</location>
+    <startDate>2026-06-19</startDate>
+    <endDate>2026-06-20</endDate>
+    <description>Komorní dvoudenní festival hudby a krátkých talků v přírodním areálu.</description>
+  </identity>
+
+  <tickets>
+    <currency>CZK</currency>
+    <dayPrice>590</dayPrice>
+    <fullPrice>990</fullPrice>
+    <url>https://example.invalid/tickets</url>
+  </tickets>
+
+  <venues>
+    <venue id="VEN-001">
+      <name>Main Meadow</name>
+      <type>outdoor</type>
+      <capacity>800</capacity>
+      <address>
+        <street>U Řeky 1</street>
+        <city>Fikce</city>
+        <postalCode>10000</postalCode>
+        <country>CZ</country>
+      </address>
+    </venue>
+
+    <venue id="VEN-002">
+      <name>Workshop Barn</name>
+      <type>indoor</type>
+      <capacity>200</capacity>
+      <address>
+        <street>U Řeky 2</street>
+        <city>Fikce</city>
+        <postalCode>10000</postalCode>
+        <country>CZ</country>
+      </address>
+    </venue>
+  </venues>
+
+  <performers>
+    <performer id="PERF-001">
+      <name>Vlčí Ticho</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+
+    <performer id="PERF-002">
+      <name>River Pulse</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+
+    <performer id="PERF-003">
+      <name>Jana &amp; Struny</name>
+      <type>band</type>
+      <genre>folk</genre>
+      <country>CZ</country>
+    </performer>
+
+    <performer id="PERF-004">
+      <name>Noise &amp; Tea</name>
+      <type>band</type>
+      <genre>alt-rock</genre>
+      <country>SK</country>
+    </performer>
+
+    <performer id="PERF-005">
+      <name>Byte Stories</name>
+      <type>speaker</type>
+      <genre>talk</genre>
+      <country>CZ</country>
+    </performer>
+
+    <performer id="PERF-006">
+      <name>Sound Design Lab</name>
+      <type>workshop</type>
+      <genre>workshop</genre>
+      <country>CZ</country>
+    </performer>
+
+    <performer id="PERF-007">
+      <name>Sunset Strings</name>
+      <type>band</type>
+      <genre>acoustic</genre>
+      <country>CZ</country>
+    </performer>
+
+    <performer id="PERF-008">
+      <name>Midnight Crows</name>
+      <type>band</type>
+      <genre>rock</genre>
+      <country>PL</country>
+    </performer>
+  </performers>
+
+  <events>
+    <event id="EVT-001">
+      <title>Otevření areálu</title>
+      <type>info</type>
+      <start>2026-06-19T14:00:00</start>
+      <end>2026-06-19T14:15:00</end>
+      <venueId>VEN-001</venueId>
+    </event>
+
+    <event id="EVT-002">
+      <title>Vlčí Ticho</title>
+      <type>concert</type>
+      <start>2026-06-19T16:00:00</start>
+      <end>2026-06-19T17:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-001</performerId>
+    </event>
+
+    <event id="EVT-003">
+      <title>Byte Stories: Jak vzniká příběh ve hře</title>
+      <type>talk</type>
+      <start>2026-06-19T17:30:00</start>
+      <end>2026-06-19T18:15:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-005</performerId>
+    </event>
+
+    <event id="EVT-004">
+      <title>River Pulse (DJ set)</title>
+      <type>concert</type>
+      <start>2026-06-19T19:00:00</start>
+      <end>2026-06-19T20:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-002</performerId>
+    </event>
+
+    <event id="EVT-005">
+      <title>Jana &amp; Struny</title>
+      <type>concert</type>
+      <start>2026-06-20T13:00:00</start>
+      <end>2026-06-20T14:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-003</performerId>
+    </event>
+
+    <event id="EVT-006">
+      <title>Sound Design Lab: Základy práce se zvukem</title>
+      <type>workshop</type>
+      <start>2026-06-20T14:30:00</start>
+      <end>2026-06-20T16:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-006</performerId>
+    </event>
+
+    <event id="EVT-007">
+      <title>Sunset Strings</title>
+      <type>concert</type>
+      <start>2026-06-20T17:00:00</start>
+      <end>2026-06-20T18:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-007</performerId>
+    </event>
+
+    <event id="EVT-008">
+      <title>Noise &amp; Tea</title>
+      <type>concert</type>
+      <start>2026-06-20T19:00:00</start>
+      <end>2026-06-20T20:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-004</performerId>
+    </event>
+
+    <event id="EVT-009">
+      <title>Midnight Crows</title>
+      <type>concert</type>
+      <start>2026-06-20T21:00:00</start>
+      <end>2026-06-20T22:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-008</performerId>
+    </event>
+
+    <event id="EVT-010">
+      <title>Zavření areálu</title>
+      <type>info</type>
+      <start>2026-06-20T22:30:00</start>
+      <end>2026-06-20T22:45:00</end>
+      <venueId>VEN-001</venueId>
+    </event>
+  </events>
+</festival>

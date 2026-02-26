@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <!-- =========================================================
+       1) SIMPLE TYPES (restrictions: pattern / enum / ranges)
+       ========================================================= -->
+
+  <!-- Custom restriction: Festival ID pattern -->
+  <xs:simpleType name="FestivalIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="FEST-\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: Venue ID pattern -->
+  <xs:simpleType name="VenueIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="VEN-\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: Performer ID pattern -->
+  <xs:simpleType name="PerformerIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="PERF-\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: Event ID pattern -->
+  <xs:simpleType name="EventIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="EVT-\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: Venue type enum -->
+  <xs:simpleType name="VenueTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="outdoor"/>
+      <xs:enumeration value="indoor"/>
+      <xs:enumeration value="tent"/>
+      <xs:enumeration value="stage"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: Performer type enum -->
+  <xs:simpleType name="PerformerTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="band"/>
+      <xs:enumeration value="dj"/>
+      <xs:enumeration value="speaker"/>
+      <xs:enumeration value="workshop"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: Event type enum -->
+  <xs:simpleType name="EventTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="concert"/>
+      <xs:enumeration value="talk"/>
+      <xs:enumeration value="workshop"/>
+      <xs:enumeration value="info"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom restriction: positive capacity -->
+  <xs:simpleType name="CapacityType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- =========================================================
+       2) COMPLEX TYPES (structure of elements)
+       ========================================================= -->
+
+  <xs:complexType name="FestivalType">
+    <xs:sequence>
+      <xs:element name="identity" type="IdentityType"/>
+      <xs:element name="tickets" type="TicketsType" minOccurs="0"/>
+      <xs:element name="venues" type="VenuesType"/>
+      <xs:element name="performers" type="PerformersType"/>
+      <xs:element name="events" type="EventsType"/>
+    </xs:sequence>
+
+    <xs:attribute name="id" type="FestivalIdType" use="required"/>
+    <xs:attribute name="version" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="IdentityType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="edition" type="xs:integer"/>
+      <xs:element name="location" type="xs:string"/>
+      <xs:element name="startDate" type="xs:date"/>
+      <xs:element name="endDate" type="xs:date"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TicketsType">
+    <xs:sequence>
+      <xs:element name="currency" type="xs:string"/>
+      <xs:element name="dayPrice" type="xs:integer"/>
+      <xs:element name="fullPrice" type="xs:integer"/>
+      <xs:element name="url" type="xs:anyURI"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VenuesType">
+    <xs:sequence>
+      <xs:element name="venue" type="VenueType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VenueType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="type" type="VenueTypeEnum"/>
+      <xs:element name="capacity" type="CapacityType"/>
+      <xs:element name="address" type="AddressType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="VenueIdType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="street" type="xs:string"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="postalCode" type="xs:string"/>
+      <xs:element name="country" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PerformersType">
+    <xs:sequence>
+      <xs:element name="performer" type="PerformerType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PerformerType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="type" type="PerformerTypeEnum"/>
+      <xs:element name="genre" type="xs:string"/>
+      <xs:element name="country" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="PerformerIdType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="EventsType">
+    <xs:sequence>
+      <xs:element name="event" type="EventType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EventType">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="type" type="EventTypeEnum"/>
+      <xs:element name="start" type="xs:dateTime"/>
+      <xs:element name="end" type="xs:dateTime"/>
+      <xs:element name="venueId" type="VenueIdType"/>
+      <xs:element name="performerId" type="PerformerIdType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="EventIdType" use="required"/>
+  </xs:complexType>
+
+  <!-- =========================================================
+       3) ROOT ELEMENT + integrity constraints (key / keyref)
+       ========================================================= -->
+
+  <xs:element name="festival" type="FestivalType">
+
+    <!-- Uniqueness: venue/@id -->
+    <xs:key name="venueKey">
+      <xs:selector xpath="venues/venue"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Uniqueness: performer/@id -->
+    <xs:key name="performerKey">
+      <xs:selector xpath="performers/performer"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Reference: events/event/venueId must match venues/venue/@id -->
+    <xs:keyref name="eventVenueRef" refer="venueKey">
+      <xs:selector xpath="events/event"/>
+      <xs:field xpath="venueId"/>
+    </xs:keyref>
+
+    <!-- Reference: events/event/performerId must match performers/performer/@id -->
+    <xs:keyref name="eventPerformerRef" refer="performerKey">
+      <xs:selector xpath="events/event"/>
+      <xs:field xpath="performerId"/>
+    </xs:keyref>
+
+  </xs:element>
+
+</xs:schema>
