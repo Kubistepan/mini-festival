@@ -1,4 +1,4 @@
-# Zvuky Údolí – MINI (pilot)
+# Mini-Festival
 
 ## Identita festivalu
 - Název: Mini festival
