@@ -3,25 +3,31 @@
 <!--
   Transformace XML → JSON
   Endpoint: GET /api/performers
-  Vytváří seznam všech účinkujících ve formátu JSON.
+  Podpora stránkování: page, pageSize
 -->
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-  <!-- Výstup bude text (JSON), nikoliv XML -->
   <xsl:output method="text" encoding="UTF-8"/>
 
-  <!--
-    Hlavní šablona.
-    Spustí se nad kořenovým elementem <festival>.
-  -->
+  <!-- Stránkování (default hodnoty) -->
+  <xsl:param name="page" select="1"/>
+  <xsl:param name="pageSize" select="10"/>
+
   <xsl:template match="/festival">
+
+    <!-- Výpočet rozsahu položek -->
+    <xsl:variable name="startIndex" select="(($page - 1) * $pageSize) + 1"/>
+    <xsl:variable name="endIndex" select="$startIndex + $pageSize - 1"/>
 
 {
   "data": [
 
-    <!-- Iterace přes všechny elementy <performer> -->
-<xsl:for-each select="performers/performer">
+    <!-- Vybereme jen položky spadající do rozsahu stránky -->
+<xsl:for-each select="performers/performer[
+  position() &gt;= $startIndex and
+  position() &lt;= $endIndex
+]">
 
     {
       "id": "<xsl:value-of select="@id"/>",
@@ -30,12 +36,15 @@
       "genre": "<xsl:value-of select="genre"/>",
       "country": "<xsl:value-of select="country"/>"
     }
-    <!-- Přidá čárku pouze pokud nejde o poslední položku -->
     <xsl:if test="position() != last()">,</xsl:if>
 
 </xsl:for-each>
 
-  ]
+  ],
+  "paging": {
+    "page": <xsl:value-of select="$page"/>,
+    "pageSize": <xsl:value-of select="$pageSize"/>
+  }
 }
 
   </xsl:template>
