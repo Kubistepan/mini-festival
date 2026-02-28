@@ -1,0 +1,32 @@
+
+
+{
+  "data": [
+
+    
+
+
+    {
+      "id": "VEN-001",
+      "name": "Main Meadow",
+      "type": "outdoor",
+      "capacity": 800
+    }
+    ,
+
+    {
+      "id": "VEN-002",
+      "name": "Workshop Barn",
+      "type": "indoor",
+      "capacity": 200
+    }
+    
+
+  ],
+  "paging": {
+    "page": 1,
+    "pageSize": 3
+  }
+}
+
+  

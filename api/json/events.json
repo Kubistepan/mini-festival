@@ -1,0 +1,142 @@
+
+
+{
+  "data": [
+
+    
+
+
+    {
+      "id": "EVT-001",
+      "title": "Otevření areálu",
+      "type": "info",
+      "start": "2026-06-19T14:00:00",
+      "end": "2026-06-19T14:15:00",
+      "venueId": "VEN-001"
+
+    }
+    ,
+
+    {
+      "id": "EVT-002",
+      "title": "Vlčí Ticho",
+      "type": "concert",
+      "start": "2026-06-19T16:00:00",
+      "end": "2026-06-19T17:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-001"
+
+    }
+    ,
+
+    {
+      "id": "EVT-003",
+      "title": "Byte Stories: Jak vzniká příběh ve hře",
+      "type": "talk",
+      "start": "2026-06-19T17:30:00",
+      "end": "2026-06-19T18:15:00",
+      "venueId": "VEN-002"
+
+      , "performerId": "PERF-005"
+
+    }
+    ,
+
+    {
+      "id": "EVT-004",
+      "title": "River Pulse (DJ set)",
+      "type": "concert",
+      "start": "2026-06-19T19:00:00",
+      "end": "2026-06-19T20:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-002"
+
+    }
+    ,
+
+    {
+      "id": "EVT-005",
+      "title": "Jana & Struny",
+      "type": "concert",
+      "start": "2026-06-20T13:00:00",
+      "end": "2026-06-20T14:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-003"
+
+    }
+    ,
+
+    {
+      "id": "EVT-006",
+      "title": "Sound Design Lab: Základy práce se zvukem",
+      "type": "workshop",
+      "start": "2026-06-20T14:30:00",
+      "end": "2026-06-20T16:00:00",
+      "venueId": "VEN-002"
+
+      , "performerId": "PERF-006"
+
+    }
+    ,
+
+    {
+      "id": "EVT-007",
+      "title": "Sunset Strings",
+      "type": "concert",
+      "start": "2026-06-20T17:00:00",
+      "end": "2026-06-20T18:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-007"
+
+    }
+    ,
+
+    {
+      "id": "EVT-008",
+      "title": "Noise & Tea",
+      "type": "concert",
+      "start": "2026-06-20T19:00:00",
+      "end": "2026-06-20T20:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-004"
+
+    }
+    ,
+
+    {
+      "id": "EVT-009",
+      "title": "Midnight Crows",
+      "type": "concert",
+      "start": "2026-06-20T21:00:00",
+      "end": "2026-06-20T22:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-008"
+
+    }
+    ,
+
+    {
+      "id": "EVT-010",
+      "title": "Zavření areálu",
+      "type": "info",
+      "start": "2026-06-20T22:30:00",
+      "end": "2026-06-20T22:45:00",
+      "venueId": "VEN-001"
+
+    }
+    
+
+  ],
+  "paging": {
+    "page": 1,
+    "pageSize": 10
+  }
+}
+
+  

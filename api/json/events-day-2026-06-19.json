@@ -1,0 +1,66 @@
+
+
+{
+  "data": [
+
+    
+
+
+    {
+      "id": "EVT-001",
+      "title": "Otevření areálu",
+      "type": "info",
+      "start": "2026-06-19T14:00:00",
+      "end": "2026-06-19T14:15:00",
+      "venueId": "VEN-001"
+
+    }
+    ,
+
+    {
+      "id": "EVT-002",
+      "title": "Vlčí Ticho",
+      "type": "concert",
+      "start": "2026-06-19T16:00:00",
+      "end": "2026-06-19T17:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-001"
+
+    }
+    ,
+
+    {
+      "id": "EVT-003",
+      "title": "Byte Stories: Jak vzniká příběh ve hře",
+      "type": "talk",
+      "start": "2026-06-19T17:30:00",
+      "end": "2026-06-19T18:15:00",
+      "venueId": "VEN-002"
+
+      , "performerId": "PERF-005"
+
+    }
+    ,
+
+    {
+      "id": "EVT-004",
+      "title": "River Pulse (DJ set)",
+      "type": "concert",
+      "start": "2026-06-19T19:00:00",
+      "end": "2026-06-19T20:00:00",
+      "venueId": "VEN-001"
+
+      , "performerId": "PERF-002"
+
+    }
+    
+
+  ],
+  "paging": {
+    "page": 1,
+    "pageSize": 10
+  }
+}
+
+  

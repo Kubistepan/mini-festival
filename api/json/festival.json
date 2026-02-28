@@ -1,0 +1,17 @@
+
+{
+  "id": "FEST-001",
+  "name": "Mini festival",
+  "edition": 1,
+  "location": "Údolní areál u řeky (fiktivní)",
+  "startDate": "2026-06-19",
+  "endDate": "2026-06-20",
+  "description": "Komorní dvoudenní festival hudby a krátkých talků v přírodním areálu.",
+  "tickets": {
+    "currency": "CZK",
+    "dayPrice": 590,
+    "fullPrice": 990,
+    "url": "https://example.invalid/tickets"
+  }
+}
+  

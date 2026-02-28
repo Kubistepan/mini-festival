@@ -1,0 +1,13 @@
+
+{
+  "id": "VEN-001",
+  "name": "Main Meadow",
+  "type": "outdoor",
+  "capacity": 800,
+  "address": {
+    "street": "U Řeky 1",
+    "city": "Fikce",
+    "postalCode": "10000",
+    "country": "CZ"
+  }
+}
