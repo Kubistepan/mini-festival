@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/event-by-id.schema.json",
+  "title": "EventDetail",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "type", "start", "end", "venueId"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^EVT-\\d{3}$" },
+    "title": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["concert", "talk", "workshop", "info"]
+    },
+    "start": { "type": "string", "format": "date-time" },
+    "end": { "type": "string", "format": "date-time" },
+    "venueId": { "type": "string", "pattern": "^VEN-\\d{3}$" },
+    "performerId": { "type": "string", "pattern": "^PERF-\\d{3}$" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/performer-by-id.schema.json",
+  "title": "PerformerDetail",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "type", "genre", "country"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^PERF-\\d{3}$" },
+    "name": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["band", "dj", "speaker", "workshop"]
+    },
+    "genre": { "type": "string" },
+    "country": { "type": "string" }
+  }
+}

@@ -1,0 +1,251 @@
+openapi: 3.1.0
+
+info:
+  title: Mini Festival API
+  version: 1.0.0
+  description: |
+    Ukázkové REST API pro fiktivní dvoudenní festival.
+    Data jsou generována transformací z XML.
+
+servers:
+  - url: https://example.invalid/api
+    description: Mock server (statická simulace)
+
+paths:
+ /festival:
+    get:
+      summary: Get festival information
+      description: Returns basic information about the festival.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/festival.schema.json
+        '404':
+          description: Festival not found
+
+ /venues:
+    get:
+      summary: Get list of venues
+      description: Returns paginated list of festival venues.
+      parameters:
+        - name: page
+          in: query
+          description: Page number (starting from 1)
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+
+        - name: pageSize
+          in: query
+          description: Number of items per page
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 3
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/venues.schema.json
+
+        '400':
+          description: Invalid query parameter
+
+        '404':
+          description: No venues found
+
+ /venues/{id}:
+    get:
+      summary: Get venue by ID
+      description: Returns detail of a single venue.
+      parameters:
+        - name: id
+          in: path
+          description: Venue identifier
+          required: true
+          schema:
+            type: string
+            pattern: '^VEN-\d{3}$'
+          example: 'VEN-001'
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/venue-by-id.schema.json
+
+        '400':
+          description: Invalid ID format
+
+        '404':
+          description: Venue not found
+
+ /performers:
+    get:
+      summary: Get list of performers
+      description: Returns paginated list of festival performers.
+      parameters:
+        - name: page
+          in: query
+          description: Page number (starting from 1)
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+
+        - name: pageSize
+          in: query
+          description: Number of items per page
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 10
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/performers.schema.json
+
+        '400':
+          description: Invalid query parameter
+
+        '404':
+          description: No performers found
+
+ /performers/{id}:
+    get:
+      summary: Get performer by ID
+      description: Returns detail of a single performer.
+      parameters:
+        - name: id
+          in: path
+          description: Performer identifier
+          required: true
+          schema:
+            type: string
+            pattern: '^PERF-\d{3}$'
+          example: 'PERF-001'
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/performer-by-id.schema.json
+
+        '400':
+          description: Invalid ID format
+
+        '404':
+          description: Performer not found
+
+ /events:
+    get:
+      summary: Get list of events
+      description: |
+        Returns paginated list of events.
+        Supports filtering by day, venueId and performerId.
+      parameters:
+        - name: day
+          in: query
+          description: Filter by day (YYYY-MM-DD) based on event start
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}-\d{2}$'
+          example: '2026-06-19'
+
+        - name: venueId
+          in: query
+          description: Filter by venue ID
+          required: false
+          schema:
+            type: string
+            pattern: '^VEN-\d{3}$'
+          example: 'VEN-001'
+
+        - name: performerId
+          in: query
+          description: Filter by performer ID
+          required: false
+          schema:
+            type: string
+            pattern: '^PERF-\d{3}$'
+          example: 'PERF-001'
+
+        - name: page
+          in: query
+          description: Page number (starting from 1)
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+
+        - name: pageSize
+          in: query
+          description: Number of items per page
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 10
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/events.schema.json
+
+        '400':
+          description: Invalid query parameter
+
+        '404':
+          description: No events found
+
+ /events/{id}:
+    get:
+      summary: Get event by ID
+      description: Returns detail of a single event.
+      parameters:
+        - name: id
+          in: path
+          description: Event identifier
+          required: true
+          schema:
+            type: string
+            pattern: '^EVT-\d{3}$'
+          example: 'EVT-001'
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: ./json-schema/event-by-id.schema.json
+
+        '400':
+          description: Invalid ID format
+
+        '404':
+          description: Event not found

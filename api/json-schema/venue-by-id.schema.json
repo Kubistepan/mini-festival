@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/venue-by-id.schema.json",
+  "title": "VenueDetail",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "type", "capacity", "address"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^VEN-\\d{3}$" },
+    "name": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["outdoor", "indoor", "tent", "stage"]
+    },
+    "capacity": { "type": "integer", "minimum": 1 },
+    "address": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["street", "city", "postalCode", "country"],
+      "properties": {
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "country": { "type": "string" }
+      }
+    }
+  }
+}

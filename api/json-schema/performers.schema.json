@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/performers.schema.json",
+  "title": "PerformersResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["data", "paging"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Performer" }
+    },
+    "paging": { "$ref": "#/$defs/Paging" }
+  },
+
+  "$defs": {
+    "Paging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["page", "pageSize"],
+      "properties": {
+        "page": { "type": "integer", "minimum": 1 },
+        "pageSize": { "type": "integer", "minimum": 1 }
+      }
+    },
+
+    "Performer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "genre", "country"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^PERF-\\d{3}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": ["band", "dj", "speaker", "workshop"]
+        },
+        "genre": { "type": "string", "minLength": 1 },
+        "country": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

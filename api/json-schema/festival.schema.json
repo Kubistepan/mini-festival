@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/festival.schema.json",
+  "title": "FestivalResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "edition",
+    "location",
+    "startDate",
+    "endDate",
+    "description",
+    "tickets"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^FEST-\\d{3}$" },
+    "name": { "type": "string" },
+    "edition": { "type": "integer", "minimum": 1 },
+    "location": { "type": "string" },
+    "startDate": { "type": "string", "format": "date" },
+    "endDate": { "type": "string", "format": "date" },
+    "description": { "type": "string" },
+    "tickets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["currency", "dayPrice", "fullPrice", "url"],
+      "properties": {
+        "currency": { "type": "string" },
+        "dayPrice": { "type": "integer", "minimum": 0 },
+        "fullPrice": { "type": "integer", "minimum": 0 },
+        "url": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}
