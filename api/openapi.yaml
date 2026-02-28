@@ -12,7 +12,7 @@ servers:
     description: Mock server (statická simulace)
 
 paths:
- /festival:
+  /festival:
     get:
       summary: Get festival information
       description: Returns basic information about the festival.
@@ -26,7 +26,7 @@ paths:
         '404':
           description: Festival not found
 
- /venues:
+  /venues:
     get:
       summary: Get list of venues
       description: Returns paginated list of festival venues.
@@ -63,7 +63,7 @@ paths:
         '404':
           description: No venues found
 
- /venues/{id}:
+  /venues/{id}:
     get:
       summary: Get venue by ID
       description: Returns detail of a single venue.
@@ -91,7 +91,7 @@ paths:
         '404':
           description: Venue not found
 
- /performers:
+  /performers:
     get:
       summary: Get list of performers
       description: Returns paginated list of festival performers.
@@ -128,7 +128,7 @@ paths:
         '404':
           description: No performers found
 
- /performers/{id}:
+  /performers/{id}:
     get:
       summary: Get performer by ID
       description: Returns detail of a single performer.
@@ -156,7 +156,7 @@ paths:
         '404':
           description: Performer not found
 
- /events:
+  /events:
     get:
       summary: Get list of events
       description: |
@@ -222,7 +222,7 @@ paths:
         '404':
           description: No events found
 
- /events/{id}:
+  /events/{id}:
     get:
       summary: Get event by ID
       description: Returns detail of a single event.
