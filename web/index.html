@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- POVINNÉ: title -->
+  <title>Mini Festival 2026</title>
+
+  <!-- POVINNÉ: meta description -->
+  <meta name="description" content="Oficiální web Mini Festivalu 2026 – dvoudenní hudební a talk festival v přírodním areálu.">
+
+  <!-- POVINNÉ: Open Graph minimum -->
+  <meta property="og:title" content="Mini Festival 2026">
+  <meta property="og:description" content="Dvoudenní hudební festival s koncerty, workshopy a talky.">
+  <meta property="og:image" content="https://picsum.photos/1200/630">
+  <meta property="og:type" content="website">
+
+  <!-- POVINNÉ: externí CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- POVINNÉ: JSON-LD (strukturovaná data pro festival) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": "Mini Festival 2026",
+    "startDate": "2026-06-19",
+    "endDate": "2026-06-20",
+    "location": {
+      "@type": "Place",
+      "name": "Údolní areál u řeky",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "U Řeky 1",
+        "addressLocality": "Fikce",
+        "postalCode": "10000",
+        "addressCountry": "CZ"
+      }
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- POVINNÉ: header -->
+<header>
+  <div class="container">
+    <!-- POVINNÉ: h1 -->
+    <h1>Mini Festival 2026</h1>
+
+    <!-- POVINNÉ: nav -->
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">O festivalu</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="performers.html">Účinkující</a></li>
+        <li><a href="practical.html">Praktické informace</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- POVINNÉ: main -->
+<main class="container">
+
+  <!-- POVINNÉ: section -->
+  <section>
+
+    <!-- POVINNÉ: article -->
+    <article>
+      <h2>O festivalu</h2>
+
+      <!-- POVINNÉ: p -->
+      <p>Mini Festival 2026 je komorní dvoudenní akce zaměřená na hudbu, workshopy a inspirativní talky.</p>
+
+      <!-- POVINNÉ: element time -->
+      <p>
+        Festival se koná ve dnech
+        <time datetime="2026-06-19">19. 6. 2026</time> –
+        <time datetime="2026-06-20">20. 6. 2026</time>.
+      </p>
+    </article>
+
+  </section>
+
+  <!-- POVINNÉ: druhá section -->
+  <section class="grid">
+
+    <!-- POVINNÉ: další article -->
+    <article class="card">
+      <h2>Co vás čeká</h2>
+
+      <!-- POVINNÉ: ul + li -->
+      <ul>
+        <li>Koncerty českých i zahraničních interpretů</li>
+        <li>Workshopy zaměřené na zvuk a hudbu</li>
+        <li>Inspirativní talky</li>
+      </ul>
+    </article>
+
+    <!-- POVINNÉ: aside -->
+    <aside>
+      <h3>Místo konání</h3>
+
+      <!-- POVINNÉ: address -->
+      <address>
+        Údolní areál u řeky<br>
+        U Řeky 1<br>
+        100 00 Fikce<br>
+        Česká republika
+      </address>
+    </aside>
+
+  </section>
+
+</main>
+
+<!-- POVINNÉ: footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Mini Festival</p>
+  </div>
+</footer>
+
+</body>
+</html>

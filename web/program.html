@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- POVINNÉ: title -->
+  <title>Program | Mini Festival 2026</title>
+
+  <!-- POVINNÉ: meta description -->
+  <meta name="description" content="Program Mini Festivalu 2026 – koncerty, workshopy a talky v průběhu dvou dní.">
+
+  <!-- POVINNÉ: Open Graph minimum -->
+  <meta property="og:title" content="Program | Mini Festival 2026">
+  <meta property="og:description" content="Přehled programu: koncerty, workshopy a talky.">
+  <meta property="og:image" content="https://picsum.photos/1200/630">
+  <meta property="og:type" content="website">
+
+  <!-- POVINNÉ: externí CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- POVINNÉ: JSON-LD pro eventy (minimální ukázka) -->
+  <!-- Pozn.: Je to statické (podle zadání), ale strukturované pro vyhledávače -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Event",
+        "name": "Vlčí Ticho",
+        "startDate": "2026-06-19T16:00:00",
+        "endDate": "2026-06-19T17:00:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Main Meadow",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "U Řeky 1",
+            "addressLocality": "Fikce",
+            "postalCode": "10000",
+            "addressCountry": "CZ"
+          }
+        },
+        "performer": { "@type": "PerformingGroup", "name": "Vlčí Ticho" }
+      },
+      {
+        "@type": "Event",
+        "name": "Byte Stories: Jak vzniká příběh ve hře",
+        "startDate": "2026-06-19T17:30:00",
+        "endDate": "2026-06-19T18:15:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Workshop Barn",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "U Řeky 2",
+            "addressLocality": "Fikce",
+            "postalCode": "10000",
+            "addressCountry": "CZ"
+          }
+        },
+        "performer": { "@type": "Person", "name": "Byte Stories" }
+      },
+      {
+        "@type": "Event",
+        "name": "Sound Design Lab: Základy práce se zvukem",
+        "startDate": "2026-06-20T14:30:00",
+        "endDate": "2026-06-20T16:00:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Workshop Barn",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "U Řeky 2",
+            "addressLocality": "Fikce",
+            "postalCode": "10000",
+            "addressCountry": "CZ"
+          }
+        },
+        "performer": { "@type": "Organization", "name": "Sound Design Lab" }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- POVINNÉ: header -->
+<header>
+  <div class="container">
+    <h1>Program</h1>
+
+    <!-- POVINNÉ: nav -->
+    <nav>
+      <ul>
+        <li><a href="index.html">O festivalu</a></li>
+        <li><a href="program.html" aria-current="page">Program</a></li>
+        <li><a href="performers.html">Účinkující</a></li>
+        <li><a href="practical.html">Praktické informace</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- POVINNÉ: main -->
+<main class="container">
+
+  <!-- POVINNÉ: section (1) -->
+  <section>
+    <article>
+      <h2>Jak číst program</h2>
+      <p>Program je rozdělen podle dní a obsahuje čas, název, místo a typ akce.</p>
+    </article>
+  </section>
+
+  <!-- POVINNÉ: section (2) -->
+  <section>
+    <h2>Pátek <time datetime="2026-06-19">19. 6. 2026</time></h2>
+
+    <!-- POVINNÉ: table není v zadání výslovně, ale je to sémanticky správné pro program -->
+    <table>
+      <thead>
+        <tr>
+          <th>Čas</th>
+          <th>Akce</th>
+          <th>Místo</th>
+          <th>Typ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time">
+            <!-- POVINNÉ: time -->
+            <time datetime="2026-06-19T14:00:00">14:00</time>–<time datetime="2026-06-19T14:15:00">14:15</time>
+          </td>
+          <td>Otevření areálu</td>
+          <td>Main Meadow</td>
+          <td>info</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-19T16:00:00">16:00</time>–<time datetime="2026-06-19T17:00:00">17:00</time>
+          </td>
+          <td><a href="performers.html#PERF-001">Vlčí Ticho</a></td>
+          <td>Main Meadow</td>
+          <td>concert</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-19T17:30:00">17:30</time>–<time datetime="2026-06-19T18:15:00">18:15</time>
+          </td>
+          <td><a href="performers.html#PERF-005">Byte Stories: Jak vzniká příběh ve hře</a></td>
+          <td>Workshop Barn</td>
+          <td>talk</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-19T19:00:00">19:00</time>–<time datetime="2026-06-19T20:00:00">20:00</time>
+          </td>
+          <td><a href="performers.html#PERF-002">River Pulse (DJ set)</a></td>
+          <td>Main Meadow</td>
+          <td>concert</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- POVINNÉ: section (3) -->
+  <section>
+    <h2>Sobota <time datetime="2026-06-20">20. 6. 2026</time></h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Čas</th>
+          <th>Akce</th>
+          <th>Místo</th>
+          <th>Typ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-20T13:00:00">13:00</time>–<time datetime="2026-06-20T14:00:00">14:00</time>
+          </td>
+          <td><a href="performers.html#PERF-003">Jana &amp; Struny</a></td>
+          <td>Main Meadow</td>
+          <td>concert</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-20T14:30:00">14:30</time>–<time datetime="2026-06-20T16:00:00">16:00</time>
+          </td>
+          <td><a href="performers.html#PERF-006">Sound Design Lab: Základy práce se zvukem</a></td>
+          <td>Workshop Barn</td>
+          <td>workshop</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-20T17:00:00">17:00</time>–<time datetime="2026-06-20T18:00:00">18:00</time>
+          </td>
+          <td><a href="performers.html#PERF-007">Sunset Strings</a></td>
+          <td>Main Meadow</td>
+          <td>concert</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-20T19:00:00">19:00</time>–<time datetime="2026-06-20T20:00:00">20:00</time>
+          </td>
+          <td><a href="performers.html#PERF-004">Noise &amp; Tea</a></td>
+          <td>Main Meadow</td>
+          <td>concert</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-20T21:00:00">21:00</time>–<time datetime="2026-06-20T22:00:00">22:00</time>
+          </td>
+          <td><a href="performers.html#PERF-008">Midnight Crows</a></td>
+          <td>Main Meadow</td>
+          <td>concert</td>
+        </tr>
+        <tr>
+          <td class="time">
+            <time datetime="2026-06-20T22:30:00">22:30</time>–<time datetime="2026-06-20T22:45:00">22:45</time>
+          </td>
+          <td>Zavření areálu</td>
+          <td>Main Meadow</td>
+          <td>info</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- POVINNÉ: aside -->
+  <aside>
+    <h3>API odkazy (ukázka)</h3>
+    <ul>
+      <li><a href="../api/json/events.json">/api/events</a></li>
+      <li><a href="../api/json/events-day-2026-06-19.json">/api/events?day=2026-06-19</a></li>
+    </ul>
+    <p><small>Web je statický, odkazy slouží jako simulace napojení na API.</small></p>
+  </aside>
+
+</main>
+
+<!-- POVINNÉ: footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Mini Festival</p>
+  </div>
+</footer>
+
+</body>
+</html>
