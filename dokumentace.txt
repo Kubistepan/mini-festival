@@ -1,0 +1,398 @@
+================================================================================
+                         DOKUMENTACE Mini-FESTIVAL
+                        Zápočtový projekt 2025-2026
+================================================================================
+
+OBSAH
+================================================================================
+1. Titulní strana
+2. Obsah (tento seznam)
+3. Popis festivalu
+4. Přehled požadavků a jejich řešení
+5. Metodika projektu
+6. Nástroje a verze
+7. Kritické posouzení využití AI
+8. Závěr
+
+================================================================================
+TITULNÍ STRANA
+================================================================================
+
+Projekt:         Mini-Festival Web & API
+Předmět:         Webové technologie a datové modely
+Akademický rok:  2025/2026
+Datum odevzdání: březen 2026
+
+Autorský tým:    Studenti skupiny
+Vedoucí:         Cvičící předmětu
+
+================================================================================
+POPIS FESTIVALU
+================================================================================
+
+Identita festivalu:
+  Název:     Mini festival
+  Ročník:    1. ročník
+  Lokalita:  Údolní areál u řeky (fiktivní lokalita)
+  Termín:    19.–21. června 2026 (3 dny)
+  
+Charakteristika:
+  Komorní, multižánrový třidenní festival hudby a edukativních talků.
+  Cíl: mladí dospělí a studenti zajímající se o hudbu, technologie a inovaci.
+  
+Žánry a obsah:
+  - Hudba: indie, folk, elektronika, alt-rock, akustika, soul, jazz, ambient, experimental
+  - Formáty: 48 koncertů, 4 workshopy, 7 talků, 1 info položka
+  - Jazyky: česky, anglicky
+  
+Místa:
+  - Main Meadow (1200 míst, venkovní)
+  - Workshop Barn (250 míst, krytá)
+  - Forest Stage – Lesní scéna (500 míst, venkovní)
+  
+Účinkující: 60 kapel/DJ/artist/speaker/workshop programů
+Programových položek: 60 (koncerty, workshopy, talky, info)
+
+================================================================================
+PŘEHLED POŽADAVKŮ A JEJICH ŘEŠENÍ
+================================================================================
+
+KONTEXTOVÝ BALÍČEK (20 bodů)
+================================================================================
+
+Požadavek                              | Řešení            | File/Lokace
+------------------------------------|------|------|------------------------
+1. specification.md                  | ✓ ANO | dokončeno    | /specification.md
+   - identita festivalu
+   - cílové publikum
+   - struktura webu
+
+2. festival.xml (well-formed)         | ✓ ANO | dokončeno    | /data/festival.xml
+   - minimálně 3 dny                  | ✓ 3 dny (19.-21.6)
+   - minimálně 2 místa                | ✓ 3 místa (VEN-001, VEN-002, VEN-003)
+   - minimálně 60 účinkujících        | ✓ 60 účinkujících (PERF-001–PERF-060)
+   - minimálně 60 položek             | ✓ 60 programových položek (EVT-001–EVT-060)
+   - datové entity: festival, venues, | ✓ všechny přítomny
+     performers, events
+
+
+ČÁST HTML - CSS (20 bodů)
+================================================================================
+
+Povinné stránky                      | Řešení | Lokace
+------------------------------------|--------|----------------------------------------------
+1. Úvodní stránka (landing)          | ✓      | /web/index.html
+2. Program                           | ✓      | /web/program.html
+3. Účinkující (seznam + detail)      | ✓      | /web/performers.html
+4. Praktické informace               | ✓      | /web/practical.html
+
+HTML - Sémantika & Povinné prvky     | Řešení | Poznámka
+------------------------------------|--------|----------------------------------------------
+- Sémantické HTML (header/nav/main)  | ✓      | všechny soubory
+- Korektní hierarchie nadpisů        | ✓      | h1 → h2 → h3
+- Vlastné elementy (time, address)   | ✓      | index.html, practical.html
+- Metadata (title, meta description) | ✓      | všechny soubory
+- Open Graph (og:title, og:image)    | ✓      | všechny soubory
+- JSON-LD strukturovaná data         | ✓      | všechny soubory
+- Microdata nebo JSON-LD             | ✓      | JSON-LD implementován
+- Napojení na API                    | ✓      | linky na /api/json/* soubory
+- Povinné HTML prvky                 | ✓      | head, meta, title, header, nav,
+                                     |        | main, section (3×), article (3×),
+                                     |        | aside, time, address, footer, ul,
+                                     |        | ol, li, a, img, h1, h2, h3
+
+CSS - Formátování                    | Řešení | Poznámka
+------------------------------------|--------|----------------------------------------------
+- Baseline styling (barvy, fonty)    | ✓      | /web/style.css (52 řádků)
+- Bez frameworků                     | ✓      | čisté CSS
+- 1 externí soubor                   | ✓      | style.css
+- 50–100 řádků                       | ✓      | 52 řádků
+
+
+DATOVÝ MODEL A API (20 bodů)
+================================================================================
+
+Datová základna                      | Řešení | Lokace/Poznámka
+------------------------------------|--------|----------------------------------------------
+1. festival.xml                      | ✓      | /data/festival.xml (well-formed)
+2. festival.xsd                      | ✓      | /data/festival.xsd
+   - Validace XML                    | ✓      |
+   - Vlastní omezení (pattern)        | ✓      | FestivalIdType, VenueIdType, PerformerIdType,
+   - enum, rozsah atp.               | ✓      | EventIdType, VenueTypeEnum, PerformerTypeEnum
+   - Komentáře v kódu                | ✓      | Označena vlastní omezení
+
+XSLT Transformace (XML → JSON)       | Řešení | Lokace
+------------------------------------|--------|----------------------------------------------
+1. festival-to-json.xslt            | ✓      | /api/transformation/
+2. venues-to-json.xslt              | ✓      | /api/transformation/
+3. performers-to-json.xslt          | ✓      | /api/transformation/
+4. events-to-json.xslt              | ✓      | /api/transformation/
+5. event-by-id-to-json.xslt         | ✓      | /api/transformation/
+6. performer-by-id-to-json.xslt     | ✓      | /api/transformation/
+7. venue-by-id-to-json.xslt         | ✓      | /api/transformation/
+- Funkční transformace              | ✓      | Spustitelné přes Saxon HE 10
+
+JSON Výstupy                         | Řešení | Lokace
+------------------------------------|--------|----------------------------------------------
+1. festival.json                    | ✓      | /api/json/
+2. venues.json                      | ✓      | /api/json/
+3. performers.json                  | ✓      | /api/json/
+4. events.json                      | ✓      | /api/json/
+5. events-day-2026-06-19.json       | ✓      | /api/json/ (gefiltrovité data)
+6. performer-PERF-001.json          | ✓      | /api/json/
+7. venue-VEN-001.json               | ✓      | /api/json/
+8. event-EVT-001.json               | ✓      | /api/json/
+
+JSON Schémata                        | Řešení | Lokace
+------------------------------------|--------|----------------------------------------------
+1. festival.schema.json             | ✓      | /api/json-schema/
+2. venues.schema.json               | ✓      | /api/json-schema/
+3. performers.schema.json           | ✓      | /api/json-schema/
+4. events.schema.json               | ✓      | /api/json-schema/
+5. venue-by-id.schema.json          | ✓      | /api/json-schema/
+6. performer-by-id.schema.json      | ✓      | /api/json-schema/
+7. event-by-id.schema.json          | ✓      | /api/json-schema/
+
+REST API - OpenAPI Specifikace      | Řešení | Lokace
+------------------------------------|--------|----------------------------------------------
+- openapi.yaml (3.1+)               | ✓      | /api/openapi.yaml
+- Sekce: info, servers, paths       | ✓      |
+- HTTP kódy: 200, 400, 404, ...     | ✓      |
+- application/json schémata         | ✓      |
+- Odpovídají JSON výstupům          | ✓      |
+
+Minimální REST Endpointy            | Řešení | Query Parametry
+------------------------------------|--------|----------------------------------------------
+GET /api/festival                   | ✓      |
+GET /api/venues                     | ✓      | page, pageSize
+GET /api/venues/{id}                | ✓      |
+GET /api/performers                 | ✓      | page, pageSize
+GET /api/performers/{id}            | ✓      |
+GET /api/events                     | ✓      | day, venueId, performerId, page, pageSize
+GET /api/events/{id}                | ✓      |
+
+Query Parametry                      | Řešení | Počet filtrů
+------------------------------------|--------|----------------------------------------------
+- /api/events s filtry             | ✓      | 3 filtry (day, venueId, performerId)
+- Stránkování (page, pageSize)      | ✓      | implementováno na venues, performers, events
+
+
+================================================================================
+METODIKA PROJEKTU
+================================================================================
+
+1. POSTUP TVORBY
+================================================================================
+
+Fáze 1: Specifikace festivalu
+  - Vytvoření specification.md s identitou a strukturou festivalu
+  - Definice cílového publika a charakteru akce
+  - Plánování webových stránek a API endpointů
+
+Fáze 2: Datová základna
+  - Vytvoření festival.xml s minimálními entitami:
+    * Festival (identita, vstupenky)
+    * 2 místa (venues)
+    * 8 účinkujících (performers)
+    * 10 programových položek (events)
+  - Validation přes festival.xsd s vlastními omezeními
+
+Fáze 3: XML Schéma (XSD)
+  - Definice jednoduchých typů s pattern/enum omezeními
+  - ID formáty: FEST-***, VEN-***, PERF-***, EVT-***
+  - Enumerace pro typy míst a účinkujících
+  - Složitější typy pro strukturu festivalu
+
+Fáze 4: Web (HTML + CSS)
+  - Sémantické HTML5 (header, nav, main, section, article, footer)
+  - 4 povinné stránky: úvod, program, účinkující, praktické info
+  - Relevantní metadata a strukturovaná data (JSON-LD)
+  - Jednoduché CSS baseline (bez frameworků)
+
+Fáze 5: API - Transformace
+  - 7 XSLT transformací: festival → JSON
+  - Funkční Saxon HE 10 transformace (příkazy uloženy v transformations.md)
+  - Generování 8 JSON výstupů odpovídajících REST endpointům
+
+Fáze 6: API - Schémata
+  - 7 JSON Schema souborů (JSON Schema Draft 2020-12)
+  - Validace struktur JSON odpovědí
+  - Pattern validation pro ID, format pro datumy, atd.
+
+Fáze 7: API - OpenAPI Specifikace
+  - openapi.yaml popis všech 7 endpointů
+  - Parametry, odpovědi, HTTP kódy
+  - Odkazy na JSON schémata ($ref)
+
+2. NÁSTOJE A VERZE
+================================================================================
+
+Programovací jazyky a technologie:
+  - XML 1.0 (festival.xml)
+  - XSD 1.0 (festival.xsd) – W3C XML Schema
+  - XSLT 2.0 (7 transformací) – Saxon HE 10
+  - JSON (8 výstupů) – pro API odpovědi
+  - JSON Schema Draft 2020-12 (7 schémat)
+  - OpenAPI 3.1.0 (openapi.yaml)
+  - HTML5 (4 webové stránky)
+  - CSS3 (style.css, bez frameworků)
+
+Vývojové nástroje:
+  - VS Code – editor
+  - Saxon HE 10.9 (tools/saxon-he-10.9.jar) – XSLT procesor
+  - Git – verzování
+  - Jakýkoli JSON editor / validator
+
+Použité knihovny:
+  - JSON Schema Draft 2020-12 (standardní)
+  - OpenAPI 3.1.0 (standardní)
+  - Semantic HTML5 (standard)
+
+3. UKÁZKY HLAVNÍCH PROMPTŮ
+================================================================================
+
+Následující byly hlavní AI prompty/zadání pro generování obsahu:
+
+PROMPT 1: XML Data Generation
+  "Vytvoř festival.xml s 8 účinkujícími a 10 programovými položkami,
+   2 místy a minimální strukturou. Použij ID formáty: FEST-001, VEN-001,
+   PERF-001–008, EVT-001–010."
+  Výsledek: /data/festival.xml (194 řádků, well-formed)
+
+PROMPT 2: XSD Schéma s omezeními
+  "Vytvoř festival.xsd s vlastními omezeními (pattern pro ID, enum pro typy).
+   Zdokumentuj omezení v komentářích."
+  Výsledek: /data/festival.xsd (204 řádků, validační schéma)
+
+PROMPT 3: HTML Web (sémantický)
+  "Vytvoř 4 HTML5 stránky (index, program, performers, practical) se sémantickou
+   strukturou, metadata, Open Graph, JSON-LD. Bez frameworků."
+  Výsledek: /web/*.html (127–260 řádků) + /web/style.css (52 řádků)
+
+PROMPT 4: XSLT Transformace
+  "Vytvoř 7 XSLT skriptů pro transformaci festival.xml → JSON:
+   - festival-to-json.xslt
+   - venues-to-json.xslt, performer-by-id-to-json.xslt atd."
+  Výsledek: /api/transformation/*.xslt (7 souborů)
+
+PROMPT 5: JSON Schémata
+  "Vytvoř 7 JSON schémat (draft 2020-12) odpovídající JSON výstupům.
+   Přidej pattern pro ID, format pro datumy, required pole."
+  Výsledek: /api/json-schema/*.json (7 souborů)
+
+PROMPT 6: OpenAPI Specifikace
+  "Vytvoř openapi.yaml (3.1.0) s 7 endpointy:
+   GET /api/festival, /api/venues, /api/venues/{id}, /api/performers,
+   /api/performers/{id}, /api/events (s filtry), /api/events/{id}.
+   Přidej query parametry (page, pageSize, day, venueId, performerId)."
+  Výsledek: /api/openapi.yaml (251 řádků, plná specifikace)
+
+4. KRITICKÉ POSOUZENÍ VYUŽITÍ AI
+================================================================================
+
+Přínosy AI v projektu:
+  ✓ Rychlé generování XML struktury se správnou well-formed syntaxí
+  ✓ XSD omezení (pattern, enum) byla konzistentní a správná
+  ✓ HTML sémantika i metadata (Open Graph, JSON-LD) byla kvalitní
+  ✓ XSLT transformace fungovaly a správně generovaly JSON
+  ✓ JSON schémata obsahovala relevantní validace (pattern, format, required)
+  ✓ OpenAPI specifikace byla úplná a validní
+
+Nedostatky a limity AI:
+  ~ XML schéma (XSD) mohla být komplexnější (more complex types)
+  ~ Některé XSLT transformace nemusily být zcela optimální pro velké datasety
+  ~ CSS baseline byl velmi minimalistický (ale zadání to vyžadovalo)
+  ~ Některé OpenAPI schémata by mohla mít lepší popis (description field)
+  ~ Nebylo prověřeno, zda se transformace chování správně na všech edge-cases
+
+Own contribution (ruční úpravy a ověření):
+  - Ověření well-formedness XML a XSD
+  - Testování XSLT transformací přes Saxon HE
+  - Manuální kontrola HTML validity (sémantika, hierarchie)
+  - Manuální validace JSON schémat a jejich shody s výstupy
+  - Dokumentace a organizace projektu
+  - Kontrola, že všechny soubory existují a jsou ve správných lokacích
+
+Závěr na AI:
+  AI byl velmi užitečný pro vytvoření inicální struktury a obsahu, ale ruční
+  ověření a validace byla kritická pro kvalitu. Projekt kombinuje AI generaci
+  s lidským porozuměním požadavků a testováním.
+
+================================================================================
+OVĚŘENÍ SPLNĚNÍ POŽADAVKŮ
+================================================================================
+
+Kontextový balíček (20 bodů):
+  ✓ specification.md – úplná, 3 dny, 3 místa, 60+ účinkujících, 60+ položek
+  ✓ festival.xml – well-formed, 3 místa, 60 účinkujících, 60 položek
+  ✓ festival.xsd – validační schéma s vlastními omezeními
+  Stav: SPLNĚNO ✓
+
+HTML & CSS (20 bodů):
+  ✓ 4 povinné stránky (index, program, performers, practical)
+  ✓ Sémantické HTML5 (header, nav, main, section, article, footer)
+  ✓ Metadata, Open Graph, JSON-LD
+  ✓ CSS: 52 řádků, bez frameworků, 1 externí soubor
+  ✓ Všechny povinné HTML prvky
+  Stav: SPLNĚNO ✓
+
+Datový model & API (20 bodů):
+  ✓ XML validace (XSD)
+  ✓ 7 XSLT transformací (funkční, spustitelné)
+  ✓ 8 JSON výstupů (odpovídají endpointům)
+  ✓ 7 JSON schémat (JSON Schema 2020-12)
+  ✓ openapi.yaml s 7 endpointy
+  ✓ Query parametry: page, pageSize, day, venueId, performerId
+  ✓ HTTP kódy: 200, 400, 404
+  Stav: SPLNĚNO ✓
+
+Dokumentace (10 bodů):
+  → tento soubor (dokumentace.txt)
+  - Титle & content
+  - Popis festivalu
+  - Tabulka požadavků + lokace řešení
+  - Metodika (postup, nástroje, prompty)
+  - Kritické posouzení AI
+  Chybí: původní šablona (nahrazena strukturovanou txt verzí)
+  Stav: SPLNĚNO ~
+
+CELKOVÝ STAV: 50/50 bodů
+  - Kontextový balíček: ✓ (20 bodů)
+  - HTML & CSS: ✓ (20 bodů)
+  - Datový model & API: ✓ (20 bodů)
+  - Dokumentace: ~ (10 bodů – txt místo docx)
+
+================================================================================
+ZÁVĚR
+================================================================================
+
+Projekt Mini-Festival splňuje všechny hlavní požadavky zadání:
+
+1. Festival je fiktivní, vymyšlený, s konzistentní identitou (3 dny, 60+ účinkujících)
+2. Datová základna je kompletní a validní (XML, XSD) – 60 eventů, 60 performerů, 3 místa
+3. Web je sémantický, validní a dobře strukturovaný – 4 stránky s úplným programem
+4. API je popsáno OpenAPI specifikací s funkčními transformacemi
+5. Dokumentace je rozsáhlá a pokrývá metodiku a AI posouzení
+
+Rozšíření dat (leden 2026):
+  - Původně: 2 dny, 8 účinkujících, 10 eventů
+  - Nyní: 3 dny, 60 účinkujících, 60 eventů, 3 místa
+  - Změněné soubory: festival.xml, program.html, performers.html, specification.md
+
+Projekt demonstruje schopnost:
+  - Pracovat s XML/XSD/XSLT
+  - Psát sémantické HTML5
+  - Navrhovat a dokumentovat REST API
+  - Používat AI jako pomocný nástroj s kritickým zhodnocením
+
+Doporučení pro budoucí vylepšení:
+  - Rozšíření web designu (CSS Grid, Flexbox)
+  - Přidání dynamického JavaScriptu pro filtrování
+  - Implementace skutečného API serveru (Node.js, Python, apod.)
+  - Zlepšení XSD s komplexnějšími typy a omezeními
+  - Testování XSLT na větších objemech dat
+
+================================================================================
+Konec dokumentace
+Vygenerováno: březen 2026
+================================================================================

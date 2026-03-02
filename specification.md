@@ -4,7 +4,7 @@
 - Název: Mini festival
 - Ročník: 1
 - Lokalita: Údolní areál u řeky (fiktivní místo)
-- Termín: 2026-06-19 až 2026-06-20 (2 dny)
+- Termín: 2026-06-19 až 2026-06-21 (3 dny)
 
 ## Cílové publikum a charakter akce
 - Komorní multižánrový festiválek: indie/folk/elektronika + krátké talks

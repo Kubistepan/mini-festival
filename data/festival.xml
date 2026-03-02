@@ -7,14 +7,14 @@
     <edition>1</edition>
     <location>Údolní areál u řeky (fiktivní)</location>
     <startDate>2026-06-19</startDate>
-    <endDate>2026-06-20</endDate>
-    <description>Komorní dvoudenní festival hudby a krátkých talků v přírodním areálu.</description>
+    <endDate>2026-06-21</endDate>
+    <description>Třidenní multižánrový festival hudby, technologií a inspirativních talků v přírodním areálu.</description>
   </identity>
 
   <tickets>
     <currency>CZK</currency>
     <dayPrice>590</dayPrice>
-    <fullPrice>990</fullPrice>
+    <fullPrice>1490</fullPrice>
     <url>https://example.invalid/tickets</url>
   </tickets>
 
@@ -22,7 +22,7 @@
     <venue id="VEN-001">
       <name>Main Meadow</name>
       <type>outdoor</type>
-      <capacity>800</capacity>
+      <capacity>1200</capacity>
       <address>
         <street>U Řeky 1</street>
         <city>Fikce</city>
@@ -34,9 +34,21 @@
     <venue id="VEN-002">
       <name>Workshop Barn</name>
       <type>indoor</type>
-      <capacity>200</capacity>
+      <capacity>250</capacity>
       <address>
         <street>U Řeky 2</street>
+        <city>Fikce</city>
+        <postalCode>10000</postalCode>
+        <country>CZ</country>
+      </address>
+    </venue>
+
+    <venue id="VEN-003">
+      <name>Forest Stage (Lesní scéna)</name>
+      <type>outdoor</type>
+      <capacity>500</capacity>
+      <address>
+        <street>U Řeky 1</street>
         <city>Fikce</city>
         <postalCode>10000</postalCode>
         <country>CZ</country>
@@ -51,58 +63,364 @@
       <genre>indie</genre>
       <country>CZ</country>
     </performer>
-
     <performer id="PERF-002">
       <name>River Pulse</name>
       <type>dj</type>
       <genre>electronic</genre>
       <country>CZ</country>
     </performer>
-
     <performer id="PERF-003">
       <name>Jana &amp; Struny</name>
       <type>band</type>
       <genre>folk</genre>
       <country>CZ</country>
     </performer>
-
     <performer id="PERF-004">
       <name>Noise &amp; Tea</name>
       <type>band</type>
       <genre>alt-rock</genre>
       <country>SK</country>
     </performer>
-
     <performer id="PERF-005">
       <name>Byte Stories</name>
       <type>speaker</type>
       <genre>talk</genre>
       <country>CZ</country>
     </performer>
-
     <performer id="PERF-006">
       <name>Sound Design Lab</name>
       <type>workshop</type>
       <genre>workshop</genre>
       <country>CZ</country>
     </performer>
-
     <performer id="PERF-007">
       <name>Sunset Strings</name>
       <type>band</type>
       <genre>acoustic</genre>
       <country>CZ</country>
     </performer>
-
     <performer id="PERF-008">
       <name>Midnight Crows</name>
       <type>band</type>
       <genre>rock</genre>
       <country>PL</country>
     </performer>
+    <performer id="PERF-009">
+      <name>Echo Forest</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-010">
+      <name>Synth Revival</name>
+      <type>band</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-011">
+      <name>Akustika Studio</name>
+      <type>band</type>
+      <genre>acoustic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-012">
+      <name>Heritage Voices</name>
+      <type>band</type>
+      <genre>folk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-013">
+      <name>Urban Beats</name>
+      <type>dj</type>
+      <genre>hip-hop</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-014">
+      <name>Amara</name>
+      <type>band</type>
+      <genre>soul</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-015">
+      <name>Neon Lights DJ</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>DE</country>
+    </performer>
+    <performer id="PERF-016">
+      <name>Mountain Echo</name>
+      <type>band</type>
+      <genre>folk</genre>
+      <country>PL</country>
+    </performer>
+    <performer id="PERF-017">
+      <name>Vortex Sound</name>
+      <type>band</type>
+      <genre>experimental</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-018">
+      <name>Solar Winds</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>SK</country>
+    </performer>
+    <performer id="PERF-019">
+      <name>Lunar Beats</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-020">
+      <name>Crystal Wave</name>
+      <type>band</type>
+      <genre>ambient</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-021">
+      <name>Harmony Project</name>
+      <type>band</type>
+      <genre>world</genre>
+      <country>HU</country>
+    </performer>
+    <performer id="PERF-022">
+      <name>Nina Kráčová</name>
+      <type>artist</type>
+      <genre>jazz</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-023">
+      <name>Spark Collective</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-024">
+      <name>Thunder Road</name>
+      <type>band</type>
+      <genre>rock</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-025">
+      <name>Whisper Woods</name>
+      <type>band</type>
+      <genre>folk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-026">
+      <name>TechTalk: AI &amp; Music</name>
+      <type>speaker</type>
+      <genre>talk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-027">
+      <name>CreativeFlow Workshop</name>
+      <type>workshop</type>
+      <genre>workshop</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-028">
+      <name>Gravity Studio</name>
+      <type>band</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-029">
+      <name>Nova Sound</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-030">
+      <name>Prism Colors</name>
+      <type>band</type>
+      <genre>pop</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-031">
+      <name>Velocity Beats DJ</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>AT</country>
+    </performer>
+    <performer id="PERF-032">
+      <name>Serenity Sessions</name>
+      <type>band</type>
+      <genre>ambient</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-033">
+      <name>Radiant Strings</name>
+      <type>band</type>
+      <genre>classical</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-034">
+      <name>Digital Dreams</name>
+      <type>band</type>
+      <genre>synth-pop</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-035">
+      <name>Melody Lane</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-036">
+      <name>Legacy Sound</name>
+      <type>band</type>
+      <genre>rock</genre>
+      <country>SK</country>
+    </performer>
+    <performer id="PERF-037">
+      <name>Zany Zoning DJ</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-038">
+      <name>Horizon Line</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-039">
+      <name>Sonic Waves</name>
+      <type>band</type>
+      <genre>electronic</genre>
+      <country>PL</country>
+    </performer>
+    <performer id="PERF-040">
+      <name>Infinity Folk</name>
+      <type>band</type>
+      <genre>folk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-041">
+      <name>Martin Svoboda</name>
+      <type>speaker</type>
+      <genre>talk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-042">
+      <name>Mindful Production</name>
+      <type>workshop</type>
+      <genre>workshop</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-043">
+      <name>Stellar Beats</name>
+      <type>band</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-044">
+      <name>Zenith Rock</name>
+      <type>band</type>
+      <genre>rock</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-045">
+      <name>Aurora Vocals</name>
+      <type>artist</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-046">
+      <name>Cosmic Journey DJ</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-047">
+      <name>Sacred Notes</name>
+      <type>band</type>
+      <genre>world</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-048">
+      <name>Phoenix Rise</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-049">
+      <name>Quantum Sound</name>
+      <type>band</type>
+      <genre>experimental</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-050">
+      <name>Elena Šulc</name>
+      <type>artist</type>
+      <genre>folk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-051">
+      <name>Urban Forest</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-052">
+      <name>Digital Echo</name>
+      <type>band</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-053">
+      <name>Velvet Sound DJ</name>
+      <type>dj</type>
+      <genre>house</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-054">
+      <name>Stone Temple</name>
+      <type>band</type>
+      <genre>rock</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-055">
+      <name>Gentle Breeze</name>
+      <type>band</type>
+      <genre>acoustic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-056">
+      <name>Petr Novák</name>
+      <type>speaker</type>
+      <genre>talk</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-057">
+      <name>Flow State Workshop</name>
+      <type>workshop</type>
+      <genre>workshop</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-058">
+      <name>Bright Horizons</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-059">
+      <name>Rhythm Masters</name>
+      <type>dj</type>
+      <genre>electronic</genre>
+      <country>CZ</country>
+    </performer>
+    <performer id="PERF-060">
+      <name>Luna Eclipse</name>
+      <type>band</type>
+      <genre>indie</genre>
+      <country>CZ</country>
+    </performer>
   </performers>
 
   <events>
+    <!-- Den 1: 19.6.2026 -->
     <event id="EVT-001">
       <title>Otevření areálu</title>
       <type>info</type>
@@ -110,85 +428,480 @@
       <end>2026-06-19T14:15:00</end>
       <venueId>VEN-001</venueId>
     </event>
-
     <event id="EVT-002">
       <title>Vlčí Ticho</title>
       <type>concert</type>
-      <start>2026-06-19T16:00:00</start>
-      <end>2026-06-19T17:00:00</end>
+      <start>2026-06-19T14:30:00</start>
+      <end>2026-06-19T15:30:00</end>
       <venueId>VEN-001</venueId>
       <performerId>PERF-001</performerId>
     </event>
-
     <event id="EVT-003">
+      <title>Echo Forest</title>
+      <type>concert</type>
+      <start>2026-06-19T15:45:00</start>
+      <end>2026-06-19T16:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-009</performerId>
+    </event>
+    <event id="EVT-004">
       <title>Byte Stories: Jak vzniká příběh ve hře</title>
       <type>talk</type>
-      <start>2026-06-19T17:30:00</start>
-      <end>2026-06-19T18:15:00</end>
+      <start>2026-06-19T17:00:00</start>
+      <end>2026-06-19T17:45:00</end>
       <venueId>VEN-002</venueId>
       <performerId>PERF-005</performerId>
     </event>
-
-    <event id="EVT-004">
+    <event id="EVT-005">
+      <title>Synth Revival</title>
+      <type>concert</type>
+      <start>2026-06-19T17:00:00</start>
+      <end>2026-06-19T18:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-010</performerId>
+    </event>
+    <event id="EVT-006">
       <title>River Pulse (DJ set)</title>
       <type>concert</type>
-      <start>2026-06-19T19:00:00</start>
-      <end>2026-06-19T20:00:00</end>
-      <venueId>VEN-001</venueId>
+      <start>2026-06-19T18:15:00</start>
+      <end>2026-06-19T19:15:00</end>
+      <venueId>VEN-003</venueId>
       <performerId>PERF-002</performerId>
     </event>
-
-    <event id="EVT-005">
-      <title>Jana &amp; Struny</title>
-      <type>concert</type>
-      <start>2026-06-20T13:00:00</start>
-      <end>2026-06-20T14:00:00</end>
-      <venueId>VEN-001</venueId>
-      <performerId>PERF-003</performerId>
-    </event>
-
-    <event id="EVT-006">
+    <event id="EVT-007">
       <title>Sound Design Lab: Základy práce se zvukem</title>
       <type>workshop</type>
-      <start>2026-06-20T14:30:00</start>
-      <end>2026-06-20T16:00:00</end>
+      <start>2026-06-19T19:30:00</start>
+      <end>2026-06-19T21:00:00</end>
       <venueId>VEN-002</venueId>
       <performerId>PERF-006</performerId>
     </event>
-
-    <event id="EVT-007">
-      <title>Sunset Strings</title>
-      <type>concert</type>
-      <start>2026-06-20T17:00:00</start>
-      <end>2026-06-20T18:00:00</end>
-      <venueId>VEN-001</venueId>
-      <performerId>PERF-007</performerId>
-    </event>
-
     <event id="EVT-008">
-      <title>Noise &amp; Tea</title>
+      <title>Jana &amp; Struny</title>
       <type>concert</type>
-      <start>2026-06-20T19:00:00</start>
-      <end>2026-06-20T20:00:00</end>
+      <start>2026-06-19T19:30:00</start>
+      <end>2026-06-19T20:30:00</end>
       <venueId>VEN-001</venueId>
-      <performerId>PERF-004</performerId>
+      <performerId>PERF-003</performerId>
     </event>
-
     <event id="EVT-009">
-      <title>Midnight Crows</title>
+      <title>Akustika Studio</title>
       <type>concert</type>
-      <start>2026-06-20T21:00:00</start>
-      <end>2026-06-20T22:00:00</end>
+      <start>2026-06-19T20:45:00</start>
+      <end>2026-06-19T21:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-011</performerId>
+    </event>
+    <event id="EVT-010">
+      <title>Heritage Voices</title>
+      <type>concert</type>
+      <start>2026-06-19T21:00:00</start>
+      <end>2026-06-19T22:00:00</end>
       <venueId>VEN-001</venueId>
-      <performerId>PERF-008</performerId>
+      <performerId>PERF-012</performerId>
     </event>
 
-    <event id="EVT-010">
-      <title>Zavření areálu</title>
+    <!-- Den 2: 20.6.2026 -->
+    <event id="EVT-011">
+      <title>Program Den 2: Začátek</title>
       <type>info</type>
-      <start>2026-06-20T22:30:00</start>
-      <end>2026-06-20T22:45:00</end>
+      <start>2026-06-20T12:00:00</start>
+      <end>2026-06-20T12:15:00</end>
       <venueId>VEN-001</venueId>
+    </event>
+    <event id="EVT-012">
+      <title>Urban Beats DJ</title>
+      <type>concert</type>
+      <start>2026-06-20T12:30:00</start>
+      <end>2026-06-20T13:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-013</performerId>
+    </event>
+    <event id="EVT-013">
+      <title>Amara</title>
+      <type>concert</type>
+      <start>2026-06-20T13:45:00</start>
+      <end>2026-06-20T14:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-014</performerId>
+    </event>
+    <event id="EVT-014">
+      <title>TechTalk: AI &amp; Music</title>
+      <type>talk</type>
+      <start>2026-06-20T15:00:00</start>
+      <end>2026-06-20T15:45:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-026</performerId>
+    </event>
+    <event id="EVT-015">
+      <title>Neon Lights DJ (Guest)</title>
+      <type>concert</type>
+      <start>2026-06-20T15:00:00</start>
+      <end>2026-06-20T16:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-015</performerId>
+    </event>
+    <event id="EVT-016">
+      <title>Mountain Echo</title>
+      <type>concert</type>
+      <start>2026-06-20T16:15:00</start>
+      <end>2026-06-20T17:15:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-016</performerId>
+    </event>
+    <event id="EVT-017">
+      <title>CreativeFlow Workshop</title>
+      <type>workshop</type>
+      <start>2026-06-20T17:00:00</start>
+      <end>2026-06-20T18:30:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-027</performerId>
+    </event>
+    <event id="EVT-018">
+      <title>Vortex Sound</title>
+      <type>concert</type>
+      <start>2026-06-20T17:30:00</start>
+      <end>2026-06-20T18:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-017</performerId>
+    </event>
+    <event id="EVT-019">
+      <title>Solar Winds</title>
+      <type>concert</type>
+      <start>2026-06-20T18:45:00</start>
+      <end>2026-06-20T19:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-018</performerId>
+    </event>
+    <event id="EVT-020">
+      <title>Lunar Beats DJ</title>
+      <type>concert</type>
+      <start>2026-06-20T20:00:00</start>
+      <end>2026-06-20T21:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-019</performerId>
+    </event>
+    <event id="EVT-021">
+      <title>Crystal Wave</title>
+      <type>concert</type>
+      <start>2026-06-20T21:15:00</start>
+      <end>2026-06-20T22:15:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-020</performerId>
+    </event>
+
+    <!-- Den 3: 21.6.2026 -->
+    <event id="EVT-022">
+      <title>Poslední den: Začátek</title>
+      <type>info</type>
+      <start>2026-06-21T12:00:00</start>
+      <end>2026-06-21T12:15:00</end>
+      <venueId>VEN-001</venueId>
+    </event>
+    <event id="EVT-023">
+      <title>Harmony Project</title>
+      <type>concert</type>
+      <start>2026-06-21T12:30:00</start>
+      <end>2026-06-21T13:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-021</performerId>
+    </event>
+    <event id="EVT-024">
+      <title>Nina Kráčová Jazz Session</title>
+      <type>concert</type>
+      <start>2026-06-21T13:45:00</start>
+      <end>2026-06-21T14:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-022</performerId>
+    </event>
+    <event id="EVT-025">
+      <title>Spark Collective</title>
+      <type>concert</type>
+      <start>2026-06-21T15:00:00</start>
+      <end>2026-06-21T16:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-023</performerId>
+    </event>
+    <event id="EVT-026">
+      <title>Martin Svoboda: Inovace v hudbě</title>
+      <type>talk</type>
+      <start>2026-06-21T16:15:00</start>
+      <end>2026-06-21T17:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-041</performerId>
+    </event>
+    <event id="EVT-027">
+      <title>Thunder Road</title>
+      <type>concert</type>
+      <start>2026-06-21T16:15:00</start>
+      <end>2026-06-21T17:15:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-024</performerId>
+    </event>
+    <event id="EVT-028">
+      <title>Whisper Woods</title>
+      <type>concert</type>
+      <start>2026-06-21T17:30:00</start>
+      <end>2026-06-21T18:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-025</performerId>
+    </event>
+    <event id="EVT-029">
+      <title>Mindful Production Workshop</title>
+      <type>workshop</type>
+      <start>2026-06-21T17:45:00</start>
+      <end>2026-06-21T19:15:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-042</performerId>
+    </event>
+    <event id="EVT-030">
+      <title>Gravity Studio</title>
+      <type>concert</type>
+      <start>2026-06-21T18:45:00</start>
+      <end>2026-06-21T19:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-028</performerId>
+    </event>
+    <event id="EVT-031">
+      <title>Nova Sound</title>
+      <type>concert</type>
+      <start>2026-06-21T20:00:00</start>
+      <end>2026-06-21T21:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-029</performerId>
+    </event>
+    <event id="EVT-032">
+      <title>Prism Colors</title>
+      <type>concert</type>
+      <start>2026-06-21T21:15:00</start>
+      <end>2026-06-21T22:15:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-030</performerId>
+    </event>
+    <event id="EVT-033">
+      <title>Velocity Beats DJ (Closing)</title>
+      <type>concert</type>
+      <start>2026-06-21T22:30:00</start>
+      <end>2026-06-21T23:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-031</performerId>
+    </event>
+    <event id="EVT-034">
+      <title>Zavření festivalu</title>
+      <type>info</type>
+      <start>2026-06-21T23:45:00</start>
+      <end>2026-06-22T00:00:00</end>
+      <venueId>VEN-001</venueId>
+    </event>
+    
+    <!-- Dodatečné eventy - více koncertů paralelně (rozprostřeno přes všechny dny) -->
+    <event id="EVT-035">
+      <title>Serenity Sessions</title>
+      <type>concert</type>
+      <start>2026-06-19T22:15:00</start>
+      <end>2026-06-19T23:15:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-032</performerId>
+    </event>
+    <event id="EVT-036">
+      <title>Radiant Strings</title>
+      <type>concert</type>
+      <start>2026-06-20T10:00:00</start>
+      <end>2026-06-20T11:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-033</performerId>
+    </event>
+    <event id="EVT-037">
+      <title>Digital Dreams</title>
+      <type>concert</type>
+      <start>2026-06-20T11:30:00</start>
+      <end>2026-06-20T12:30:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-034</performerId>
+    </event>
+    <event id="EVT-038">
+      <title>Melody Lane</title>
+      <type>concert</type>
+      <start>2026-06-20T14:00:00</start>
+      <end>2026-06-20T15:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-035</performerId>
+    </event>
+    <event id="EVT-039">
+      <title>Legacy Sound</title>
+      <type>concert</type>
+      <start>2026-06-20T18:00:00</start>
+      <end>2026-06-20T19:00:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-036</performerId>
+    </event>
+    <event id="EVT-040">
+      <title>Zany Zoning DJ Set</title>
+      <type>concert</type>
+      <start>2026-06-20T22:30:00</start>
+      <end>2026-06-20T23:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-037</performerId>
+    </event>
+    <event id="EVT-041">
+      <title>Horizon Line</title>
+      <type>concert</type>
+      <start>2026-06-21T10:00:00</start>
+      <end>2026-06-21T11:00:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-038</performerId>
+    </event>
+    <event id="EVT-042">
+      <title>Sonic Waves (Special Guest)</title>
+      <type>concert</type>
+      <start>2026-06-21T11:30:00</start>
+      <end>2026-06-21T12:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-039</performerId>
+    </event>
+    <event id="EVT-043">
+      <title>Infinity Folk</title>
+      <type>concert</type>
+      <start>2026-06-21T14:15:00</start>
+      <end>2026-06-21T15:15:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-040</performerId>
+    </event>
+    <event id="EVT-044">
+      <title>Stellar Beats</title>
+      <type>concert</type>
+      <start>2026-06-19T16:00:00</start>
+      <end>2026-06-19T17:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-043</performerId>
+    </event>
+    <event id="EVT-045">
+      <title>Zenith Rock</title>
+      <type>concert</type>
+      <start>2026-06-19T18:00:00</start>
+      <end>2026-06-19T19:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-044</performerId>
+    </event>
+    <event id="EVT-046">
+      <title>Aurora Vocals Session</title>
+      <type>concert</type>
+      <start>2026-06-20T16:00:00</start>
+      <end>2026-06-20T17:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-045</performerId>
+    </event>
+    <event id="EVT-047">
+      <title>Cosmic Journey DJ</title>
+      <type>concert</type>
+      <start>2026-06-20T19:30:00</start>
+      <end>2026-06-20T20:30:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-046</performerId>
+    </event>
+    <event id="EVT-048">
+      <title>Sacred Notes</title>
+      <type>concert</type>
+      <start>2026-06-21T13:00:00</start>
+      <end>2026-06-21T14:00:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-047</performerId>
+    </event>
+    <event id="EVT-049">
+      <title>Phoenix Rise</title>
+      <type>concert</type>
+      <start>2026-06-21T15:30:00</start>
+      <end>2026-06-21T16:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-048</performerId>
+    </event>
+    <event id="EVT-050">
+      <title>Quantum Sound</title>
+      <type>concert</type>
+      <start>2026-06-21T18:00:00</start>
+      <end>2026-06-21T19:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-049</performerId>
+    </event>
+    <event id="EVT-051">
+      <title>Elena Šulc Folk Session</title>
+      <type>concert</type>
+      <start>2026-06-20T13:00:00</start>
+      <end>2026-06-20T14:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-050</performerId>
+    </event>
+    <event id="EVT-052">
+      <title>Urban Forest</title>
+      <type>concert</type>
+      <start>2026-06-19T15:00:00</start>
+      <end>2026-06-19T16:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-051</performerId>
+    </event>
+    <event id="EVT-053">
+      <title>Digital Echo</title>
+      <type>concert</type>
+      <start>2026-06-20T10:30:00</start>
+      <end>2026-06-20T11:30:00</end>
+      <venueId>VEN-001</venueId>
+      <performerId>PERF-052</performerId>
+    </event>
+    <event id="EVT-054">
+      <title>Velvet Sound DJ</title>
+      <type>concert</type>
+      <start>2026-06-21T10:30:00</start>
+      <end>2026-06-21T11:30:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-053</performerId>
+    </event>
+    <event id="EVT-055">
+      <title>Stone Temple</title>
+      <type>concert</type>
+      <start>2026-06-21T12:00:00</start>
+      <end>2026-06-21T13:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-054</performerId>
+    </event>
+    <event id="EVT-056">
+      <title>Gentle Breeze</title>
+      <type>concert</type>
+      <start>2026-06-19T20:30:00</start>
+      <end>2026-06-19T21:30:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-055</performerId>
+    </event>
+    <event id="EVT-057">
+      <title>Flow State Workshop</title>
+      <type>workshop</type>
+      <start>2026-06-20T09:00:00</start>
+      <end>2026-06-20T10:30:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-057</performerId>
+    </event>
+    <event id="EVT-058">
+      <title>Bright Horizons</title>
+      <type>concert</type>
+      <start>2026-06-21T19:30:00</start>
+      <end>2026-06-21T20:30:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-058</performerId>
+    </event>
+    <event id="EVT-059">
+      <title>Rhythm Masters DJ</title>
+      <type>concert</type>
+      <start>2026-06-21T20:45:00</start>
+      <end>2026-06-21T21:45:00</end>
+      <venueId>VEN-003</venueId>
+      <performerId>PERF-059</performerId>
+    </event>
+    <event id="EVT-060">
+      <title>Luna Eclipse</title>
+      <type>concert</type>
+      <start>2026-06-21T22:00:00</start>
+      <end>2026-06-21T23:00:00</end>
+      <venueId>VEN-002</venueId>
+      <performerId>PERF-060</performerId>
     </event>
   </events>
 </festival>
